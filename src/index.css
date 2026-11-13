@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #080916;
+  --color-primary: #8955FF;
+  --color-primary-dark: #6C38E8;
+  --color-secondary: #B49AFF;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #A7A9BE;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080916;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(137, 85, 255, 0.35);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(137, 85, 255, 0.65);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: #080916;
+  color: #FFFFFF;
+  overflow-x: hidden;
+}
+
+/* Glass card utility */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(137, 85, 255, 0.35);
+  box-shadow: 0 12px 40px -10px rgba(137, 85, 255, 0.25);
+  transform: translateY(-3px);
+}
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, #FFFFFF 0%, #B49AFF 60%, #8955FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-purple {
+  background: linear-gradient(135deg, #D3C2FF 0%, #8955FF 50%, #6C38E8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Background grid */
+.bg-grid-pattern {
+  background-image: radial-gradient(rgba(137, 85, 255, 0.12) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Glow ring */
+.glow-ring {
+  box-shadow: 0 0 50px -10px rgba(137, 85, 255, 0.4), inset 0 0 20px rgba(137, 85, 255, 0.2);
+}
+
+/* Accessible focus ring */
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid #B49AFF;
+  outline-offset: 2px;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
